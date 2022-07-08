@@ -16,5 +16,10 @@ public class CollectCups : MonoBehaviour
             other.tag = "Collected";
             _CollectedCups.AddCup(other.GetComponent<Cup>());
         }
+        else if(other.CompareTag("Barrier"))
+        {
+            if (GetComponent<Cup>() != null)
+                _CollectedCups.Crash(GetComponent<Cup>());
+        }
     }
 }

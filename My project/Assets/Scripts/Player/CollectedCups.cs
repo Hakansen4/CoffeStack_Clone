@@ -35,4 +35,20 @@ public class CollectedCups
             item.Movement();
         }
     }
+    public void Crash(Cup _CrashedCup)
+    {
+        int index = _CollectedCups.IndexOf(_CrashedCup);
+        if(index != _CollectedCups.Count-1)
+        {
+            //Delete in middle of the list
+            for(int i = _CollectedCups.Count-1;i>index;i--)
+            {
+                _CollectedCups[i].Throw();
+                _CollectedCups[i].tag = "Cup";
+                _CollectedCups.RemoveAt(i);
+            }
+        }
+        _CollectedCups.RemoveAt(index);
+        _CrashedCup.Kill();
+    }
 }

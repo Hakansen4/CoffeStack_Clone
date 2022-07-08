@@ -23,4 +23,8 @@ public class Cup : MonoBehaviour
     {
         transform.DOMove(new Vector3(Random.Range(-4, 4), transform.position.y, transform.position.z + 4), 1);
     }
+    public void Kill()
+    {
+        Destroy(gameObject);
+    }
 }
