@@ -21,5 +21,20 @@ public class CollectCups : MonoBehaviour
             if (GetComponent<Cup>() != null)
                 _CollectedCups.Crash(GetComponent<Cup>());
         }
+        else if(other.CompareTag("Coffee"))
+        {
+            if (GetComponent<Cup>() != null)
+                _CollectedCups.AddCoffee(GetComponent<Cup>());
+        }
+        else if(other.CompareTag("Plate"))
+        {
+            if (GetComponent<Cup>() != null)
+                _CollectedCups.AddPlate(GetComponent<Cup>());
+        }
+        else if(other.CompareTag("LevelUp"))
+        {
+            if (GetComponent<Cup>() != null)
+                _CollectedCups.LevelUp(GetComponent<Cup>());
+        }
     }
 }

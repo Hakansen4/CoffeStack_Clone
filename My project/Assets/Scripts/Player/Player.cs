@@ -6,12 +6,11 @@ public class Player : MonoBehaviour
 {
     PlayerMovement _Movement;
     CollectedCups _CollectedCups;
-
     private void Awake()
     {
         Init();
     }
-    private void Update()
+    private void Play()
     {
         _Movement.Move();
         _CollectedCups.MoveCollectedCups();

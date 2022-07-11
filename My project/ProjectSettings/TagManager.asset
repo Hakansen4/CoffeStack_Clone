@@ -7,6 +7,9 @@ TagManager:
   - Cup
   - Collected
   - Barrier
+  - Coffee
+  - Plate
+  - LevelUp
   layers:
   - Default
   - TransparentFX

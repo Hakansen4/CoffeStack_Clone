@@ -51,4 +51,16 @@ public class CollectedCups
         _CollectedCups.RemoveAt(index);
         _CrashedCup.Kill();
     }
+    public void AddCoffee(Cup _Cup)
+    {
+        _Cup.Level.AddCoffee();
+    }
+    public void AddPlate(Cup _Cup)
+    {
+        _Cup.Level.AddPlate();
+    }
+    public void LevelUp(Cup _Cup)
+    {
+        _Cup.Level.LevelUp();
+    }
 }
