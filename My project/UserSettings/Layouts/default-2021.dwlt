@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 19171
+  controlID: 23971
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 19090
+  controlID: 23955
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 19099
+  controlID: 23977
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -610,7 +610,7 @@ MonoBehaviour:
       index: 10
       layout: 4
   m_WindowGUID: f4fde6a66bf3cc04bba5d44e208ab521
-  m_Gizmos: 1
+  m_Gizmos: 0
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
@@ -619,9 +619,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.66145957, y: 4.0456753, z: 49.17261}
+    m_Target: {x: -17.844849, y: -14.69114, z: 91.99817}
     speed: 2
-    m_Value: {x: -0.66145957, y: 4.0456753, z: 49.17261}
+    m_Value: {x: -17.844849, y: -14.69114, z: 91.99817}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -668,13 +668,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.00060779596, y: 0.025487542, z: -0.00010569869, w: -0.9997386}
+    m_Target: {x: -0.21619381, y: 0.39977688, z: -0.098228686, w: -0.8855107}
     speed: 2
-    m_Value: {x: 0.0008918554, y: 0.026985534, z: -0.00006611497, w: -0.9996354}
+    m_Value: {x: -0.21600959, y: 0.40103665, z: -0.098536156, w: -0.88475996}
   m_Size:
-    m_Target: 3.5875013
+    m_Target: 20.751709
     speed: 2
-    m_Value: 3.4330156
+    m_Value: 20.751709
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -758,9 +758,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 34fbffff
+      m_SelectedIDs: 887effff
+      m_LastClickedID: -33144
+      m_ExpandedIDs: 144dffff9085ffff34fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -825,13 +825,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Cups/Materials
+    - Assets/Sprites/Arm/source
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Cups/Materials
+  - Assets/Sprites/Arm/source
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Projeler\Internship Application\CoffeStack\CoffeStack_Clone\My
     project
@@ -839,9 +839,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: dc5a0000
-    m_LastClickedID: 23260
-    m_ExpandedIDs: 00000000cc5a0000ce5a0000d05a0000
+    m_SelectedIDs: b2b50000
+    m_LastClickedID: 46514
+    m_ExpandedIDs: 000000000c5c00008eb5000092b50000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -869,7 +869,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000cc5a0000ce5a0000d05a0000
+    m_ExpandedIDs: 000000000c5c00008eb50000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -897,7 +897,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000
+    m_ExpandedInstanceIDs: c6230000a8b50000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -960,7 +960,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 216
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

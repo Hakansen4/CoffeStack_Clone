@@ -63,4 +63,13 @@ public class CollectedCups
     {
         _Cup.Level.LevelUp();
     }
+    public int Money()
+    {
+        int _Money = 0;
+        foreach (var item in _CollectedCups)
+        {
+            _Money += item.Level.GetMoney();
+        }
+        return _Money;
+    }
 }

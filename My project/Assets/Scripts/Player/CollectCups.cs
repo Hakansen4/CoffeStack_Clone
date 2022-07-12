@@ -20,6 +20,12 @@ public class CollectCups : MonoBehaviour
         {
             if (GetComponent<Cup>() != null)
                 _CollectedCups.Crash(GetComponent<Cup>());
+
+            if (other.GetComponent<HandBarrier>() != null)
+                other.GetComponent<HandBarrier>().Move();
+
+            if (other.GetComponent<FinishHandBarrier>() != null)
+                other.GetComponent<FinishHandBarrier>().Move();
         }
         else if(other.CompareTag("Coffee"))
         {

@@ -10,10 +10,13 @@ public class Cup : MonoBehaviour
     [SerializeField] private MeshRenderer Mesh;
     [HideInInspector] public CupLevelController Level;
     public Material B;
+    private void Start()
+    {
+        Level = new CupLevelController(Plate, Mesh, B);
+    }
     public void Connect(Transform _ConnectedCup)
     {
         ConnectedCup = _ConnectedCup;
-        Level = new CupLevelController(Plate, Mesh,B);
     }
     public void Movement()
     {
