@@ -9,10 +9,9 @@ public class Cup : MonoBehaviour
     [SerializeField] private GameObject Plate;
     [SerializeField] private MeshRenderer Mesh;
     [HideInInspector] public CupLevelController Level;
-    public Material B;
     private void Start()
     {
-        Level = new CupLevelController(Plate, Mesh, B);
+        Level = new CupLevelController(Plate, Mesh);
     }
     public void Connect(Transform _ConnectedCup)
     {
@@ -28,6 +27,8 @@ public class Cup : MonoBehaviour
     }
     public void Throw()
     {
+        if (GetComponent<CollectCups>() != null)
+            Destroy(GetComponent<CollectCups>());
         transform.DOMove(new Vector3(Random.Range(-4, 4), transform.position.y, transform.position.z + 4), 1);
     }
     public void Kill()

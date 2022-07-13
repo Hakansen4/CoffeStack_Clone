@@ -2,17 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoneyManager : MonoBehaviour
+public class MoneyManager
 {
-    public static MoneyManager instance;
+    private static MoneyManager instance;
 
     private int Money;
-    private void Awake()
+    private MoneyManager()
     {
-        instance = this;
         Money = 0;
     }
-
+    public static MoneyManager GetInstance()
+    {
+        if (instance == null)
+        {
+            instance = new MoneyManager();
+        }
+        return instance;
+    }
+    public int GetMoney()
+    {
+        return Money;
+    }
     public void AddMoney(int _Money)
     {
         Money += _Money;

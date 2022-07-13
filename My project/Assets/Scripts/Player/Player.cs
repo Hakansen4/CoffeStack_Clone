@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     PlayerMovement _Movement;
     CollectedCups _CollectedCups;
     private int Money;
+    private bool finished;
     private void Awake()
     {
         Init();
@@ -15,11 +16,17 @@ public class Player : MonoBehaviour
     {
         _Movement.Move();
         _CollectedCups.MoveCollectedCups();
-        Money = _CollectedCups.Money();
+        if (!finished)
+            Money = _CollectedCups.Money();
     }
     public void FinishMode()
     {
+        finished = true;
         _Movement.Finish();
+    }
+    public int GetMoney()
+    {
+        return Money;
     }
     private void Init()
     {
@@ -27,5 +34,6 @@ public class Player : MonoBehaviour
         _Movement = new PlayerMovement(transform);
         _CollectedCups = CollectedCups.GetInstance();
         _CollectedCups.PlayerTransform = transform;
+        finished = false;
     }
 }

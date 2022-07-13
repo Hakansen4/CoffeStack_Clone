@@ -8,26 +8,39 @@ public class CupLevelController
     private int Money;
     private GameObject _Plate;
     private MeshRenderer _Mesh;
-    Material C;
-    public CupLevelController(GameObject Plate,MeshRenderer Mesh,Material B)
+    Material CoffeeMaterial;
+    Material Lvl2Material;
+    Material Lvl3Material;
+    public CupLevelController(GameObject Plate,MeshRenderer Mesh)
     {
         Level = 0;
         Money = 0;
         _Plate = Plate;
         _Mesh = Mesh;
-        C = B;
+        LoadMaterials();
+    }
+    private void LoadMaterials()
+    {
+        CoffeeMaterial = Resources.Load("Cup_Materials/Coffee_Material") as Material;
     }
     public void AddCoffee()
     {
-        Material[] mats = _Mesh.materials;
-        mats[1] = C;
-        _Mesh.materials = mats;
-        Money++;
+        if(Level == 0)
+        {
+            Material[] mats = _Mesh.materials;
+            mats[1] = CoffeeMaterial;
+            _Mesh.materials = mats;
+            Level++;
+            Money++;
+        }
     }
     public void AddPlate()
     {
-        _Plate.SetActive(true);
-        Money++;
+        if(!_Plate.active)
+        {
+            _Plate.SetActive(true);
+            Money++;
+        }
     }
     public void LevelUp()
     {

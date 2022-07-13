@@ -10,6 +10,7 @@ TagManager:
   - Coffee
   - Plate
   - LevelUp
+  - LevelEnd
   layers:
   - Default
   - TransparentFX

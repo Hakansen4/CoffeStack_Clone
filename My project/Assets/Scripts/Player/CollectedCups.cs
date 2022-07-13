@@ -5,7 +5,7 @@ using UnityEngine;
 public class CollectedCups
 {
     private static CollectedCups instance;
-    private List<Cup> _CollectedCups;
+    public List<Cup> _CollectedCups;
     public Transform PlayerTransform;
     private CollectedCups()
     {

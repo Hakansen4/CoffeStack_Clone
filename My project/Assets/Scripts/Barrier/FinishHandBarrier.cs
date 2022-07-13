@@ -10,7 +10,7 @@ public class FinishHandBarrier : MonoBehaviour
     [SerializeField] private HandBarrierEnum _Barrier;
     public void Move()
     {
-        _MoneyManager = MoneyManager.instance;
+        _MoneyManager = MoneyManager.GetInstance();
         if (_Barrier == HandBarrierEnum.Right)
             transform.DOMoveX(transform.position.x + 4, 1);
         else

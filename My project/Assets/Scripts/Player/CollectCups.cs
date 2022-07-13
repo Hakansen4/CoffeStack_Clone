@@ -5,9 +5,13 @@ using UnityEngine;
 public class CollectCups : MonoBehaviour
 {
     private CollectedCups _CollectedCups;
+    private MoneyManager _Money;
+    private bool collided;
     private void Start()
     {
+        collided = false;
         _CollectedCups = CollectedCups.GetInstance();
+        _Money = MoneyManager.GetInstance();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -18,14 +22,19 @@ public class CollectCups : MonoBehaviour
         }
         else if(other.CompareTag("Barrier"))
         {
-            if (GetComponent<Cup>() != null)
-                _CollectedCups.Crash(GetComponent<Cup>());
+            if(!collided)
+            {
+                if (other.GetComponent<FinishHandBarrier>() != null)
+                    other.GetComponent<FinishHandBarrier>().Move();
 
-            if (other.GetComponent<HandBarrier>() != null)
-                other.GetComponent<HandBarrier>().Move();
+                if (GetComponent<Cup>() != null)
+                    _CollectedCups.Crash(GetComponent<Cup>());
 
-            if (other.GetComponent<FinishHandBarrier>() != null)
-                other.GetComponent<FinishHandBarrier>().Move();
+                if (other.GetComponent<HandBarrier>() != null)
+                    other.GetComponent<HandBarrier>().Move();
+
+                collided = true;
+            }
         }
         else if(other.CompareTag("Coffee"))
         {
@@ -41,6 +50,12 @@ public class CollectCups : MonoBehaviour
         {
             if (GetComponent<Cup>() != null)
                 _CollectedCups.LevelUp(GetComponent<Cup>());
+        }
+        else if(other.CompareTag("LevelEnd"))
+        {
+            Debug.Log(_CollectedCups.Money());
+            Debug.Log(_Money.GetMoney());
+            //int x = _CollectedCups.Money() + _Money.GetMoney();
         }
     }
 }
