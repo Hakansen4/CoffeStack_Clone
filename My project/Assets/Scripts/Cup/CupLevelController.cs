@@ -22,6 +22,8 @@ public class CupLevelController
     private void LoadMaterials()
     {
         CoffeeMaterial = Resources.Load("Cup_Materials/Coffee_Material") as Material;
+        Lvl2Material = Resources.Load("Cup_Materials/Lvl2_Material") as Material;
+        Lvl3Material = Resources.Load("Cup_Materials/Lvl3_Material") as Material;
     }
     public void AddCoffee()
     {
@@ -44,9 +46,17 @@ public class CupLevelController
     }
     public void LevelUp()
     {
-        if (Level != 2)
+        if (Level <= 2)
+        {
+            Material[] mats = _Mesh.materials;
+            if (Level == 0)
+                mats[1] = Lvl2Material;
+            else
+                mats[1] = Lvl3Material;
+            _Mesh.materials = mats;
             Level++;
-        Money++;
+            Money++;
+        }
     }
     public int GetMoney()
     {
