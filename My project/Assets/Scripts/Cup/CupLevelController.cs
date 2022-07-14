@@ -49,12 +49,12 @@ public class CupLevelController
         if (Level <= 2)
         {
             Material[] mats = _Mesh.materials;
-            if (Level == 0)
+            if (Level < 2)
                 mats[1] = Lvl2Material;
             else
                 mats[1] = Lvl3Material;
             _Mesh.materials = mats;
-            Level++;
+            Level += 2;
             Money++;
         }
     }

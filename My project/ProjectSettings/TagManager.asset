@@ -11,6 +11,7 @@ TagManager:
   - Plate
   - LevelUp
   - LevelEnd
+  - FinishLine
   layers:
   - Default
   - TransparentFX

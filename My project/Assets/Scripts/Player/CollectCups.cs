@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class CollectCups : MonoBehaviour
 {
+    public static event Action FinishLine;
+    public static event Action<float,float> LevelEnd;
+    public static event Action<float> AddMoney;
+
     private CollectedCups _CollectedCups;
+    [SerializeField] private Player _Player;
     private MoneyManager _Money;
     private bool collided;
     private void Start()
@@ -24,14 +30,17 @@ public class CollectCups : MonoBehaviour
         {
             if(!collided)
             {
-                if (other.GetComponent<FinishHandBarrier>() != null)
+                if(other.GetComponent<FinishHandBarrier>() != null)
+                {
                     other.GetComponent<FinishHandBarrier>().Move();
+                    AddMoney?.Invoke(GetComponent<Cup>().Level.GetMoney());
+                }
+                
 
                 if (GetComponent<Cup>() != null)
                     _CollectedCups.Crash(GetComponent<Cup>());
 
-                if (other.GetComponent<HandBarrier>() != null)
-                    other.GetComponent<HandBarrier>().Move();
+                other.GetComponent<HandBarrier>()?.Move();
 
                 collided = true;
             }
@@ -51,11 +60,13 @@ public class CollectCups : MonoBehaviour
             if (GetComponent<Cup>() != null)
                 _CollectedCups.LevelUp(GetComponent<Cup>());
         }
+        else if(other.CompareTag("FinishLine"))
+        {
+            FinishLine?.Invoke();
+        }
         else if(other.CompareTag("LevelEnd"))
         {
-            Debug.Log(_CollectedCups.Money());
-            Debug.Log(_Money.GetMoney());
-            //int x = _CollectedCups.Money() + _Money.GetMoney();
+            LevelEnd?.Invoke(_Money.GetMoney(), _Player.GetMoney());
         }
     }
 }
